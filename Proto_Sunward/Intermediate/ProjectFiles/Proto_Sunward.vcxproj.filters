@@ -11,6 +11,7 @@
     <None Include="..\..\Source\Proto_SunwardEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -37,6 +38,72 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Proto_Sunward\Proto_Sunward.h">
       <Filter>Source\Proto_Sunward</Filter>
+    </ClInclude>
+    <Filter Include="Source\Proto_Sunward\Private">
+      <UniqueIdentifier>{CAD885B0-4453-3295-9486-01723249EA78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Proto_Sunward\Private\Dalien">
+      <UniqueIdentifier>{B11DB571-49E2-3DB9-B3FC-0189804D1A67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Proto_Sunward\Private\Dalien\Actors">
+      <UniqueIdentifier>{80F01818-DFD3-38B4-93B3-2271BFDFEF97}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Proto_Sunward\Private\Dalien\Actors\CameraMap.cpp">
+      <Filter>Source\Proto_Sunward\Private\Dalien\Actors</Filter>
+    </ClCompile>
+    <Filter Include="Source\Proto_Sunward\Private\Damien">
+      <UniqueIdentifier>{5F6817F0-20C2-3D6C-854B-ED729FCA1275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Proto_Sunward\Private\Damien\Actors">
+      <UniqueIdentifier>{5E0C33CF-A1E6-32DC-A0A2-7AE276FFBFF2}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Proto_Sunward\Private\Damien\Actors\Marker.cpp">
+      <Filter>Source\Proto_Sunward\Private\Damien\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Proto_Sunward\Private\Damien\Actors\PlayerCharacter_Damien.cpp">
+      <Filter>Source\Proto_Sunward\Private\Damien\Actors</Filter>
+    </ClCompile>
+    <Filter Include="Source\Proto_Sunward\Private\Damien\UI">
+      <UniqueIdentifier>{98A2F25D-9C98-35E8-81B7-9AEC08254C36}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Proto_Sunward\Private\Damien\UI\CameraOverlay.cpp">
+      <Filter>Source\Proto_Sunward\Private\Damien\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Proto_Sunward\Private\Damien\UI\MarkerButton.cpp">
+      <Filter>Source\Proto_Sunward\Private\Damien\UI</Filter>
+    </ClCompile>
+    <Filter Include="Source\Proto_Sunward\Public">
+      <UniqueIdentifier>{9A110F05-335E-34CF-B5D6-9F9D34870EEA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Proto_Sunward\Public\Dalien">
+      <UniqueIdentifier>{204554DE-840B-3B0C-AF06-01E3DDFF26B3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Proto_Sunward\Public\Dalien\Actors">
+      <UniqueIdentifier>{00A57290-CA8B-3DA0-B3ED-28D531D5E948}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Proto_Sunward\Public\Dalien\Actors\CameraMap.h">
+      <Filter>Source\Proto_Sunward\Public\Dalien\Actors</Filter>
+    </ClInclude>
+    <Filter Include="Source\Proto_Sunward\Public\Damien">
+      <UniqueIdentifier>{A1791A42-1A7B-33E4-9178-12CA01B2D0EE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Proto_Sunward\Public\Damien\Actors">
+      <UniqueIdentifier>{153397FE-7F2E-33FD-B799-C8A3FCDBE745}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Proto_Sunward\Public\Damien\Actors\Marker.h">
+      <Filter>Source\Proto_Sunward\Public\Damien\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Proto_Sunward\Public\Damien\Actors\PlayerCharacter_Damien.h">
+      <Filter>Source\Proto_Sunward\Public\Damien\Actors</Filter>
+    </ClInclude>
+    <Filter Include="Source\Proto_Sunward\Public\Damien\UI">
+      <UniqueIdentifier>{69E6471F-A286-3F1E-B3B1-B29A2365F8C9}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Proto_Sunward\Public\Damien\UI\CameraOverlay.h">
+      <Filter>Source\Proto_Sunward\Public\Damien\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Proto_Sunward\Public\Damien\UI\MarkerButton.h">
+      <Filter>Source\Proto_Sunward\Public\Damien\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
