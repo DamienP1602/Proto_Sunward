@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\puec1602\\documents\\github\\proto_sunward\\proto_sunward\\source\\proto_sunward\\proto_sunward.cpp",
+        "Source": "c:\\users\\gregory zanatta\\onedrive\\bureau\\unreal\\proto_sunward\\proto_sunward\\source\\proto_sunward\\proto_sunward.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\puec1602\\documents\\github\\proto_sunward\\proto_sunward\\intermediate\\build\\win64\\x64\\proto_sunwardeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "c:\\users\\gregory zanatta\\onedrive\\bureau\\unreal\\proto_sunward\\proto_sunward\\intermediate\\build\\win64\\x64\\proto_sunwardeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "c:\\users\\puec1602\\documents\\github\\proto_sunward\\proto_sunward\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\proto_sunward\\definitions.proto_sunward.h",
-            "c:\\users\\puec1602\\documents\\github\\proto_sunward\\proto_sunward\\source\\proto_sunward\\proto_sunward.h"
+            "c:\\users\\gregory zanatta\\onedrive\\bureau\\unreal\\proto_sunward\\proto_sunward\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\proto_sunward\\definitions.proto_sunward.h",
+            "c:\\users\\gregory zanatta\\onedrive\\bureau\\unreal\\proto_sunward\\proto_sunward\\source\\proto_sunward\\proto_sunward.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
