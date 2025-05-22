@@ -35,9 +35,9 @@
 /NODEFAULTLIB:"LIBCD"
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
-"C:\Users\PUEC1602\Documents\GitHub\Proto_Sunward\Proto_Sunward\Intermediate\Build\Win64\x64\Proto_SunwardEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
-"C:\Users\PUEC1602\Documents\GitHub\Proto_Sunward\Proto_Sunward\Intermediate\Build\Win64\x64\UnrealEditor\Development\Proto_Sunward\Proto_Sunward.cpp.obj"
-"C:\Users\PUEC1602\Documents\GitHub\Proto_Sunward\Proto_Sunward\Intermediate\Build\Win64\x64\UnrealEditor\Development\Proto_Sunward\Default.rc2.res"
+"D:\Moi\Github\Proto_Sunward\Proto_Sunward\Intermediate\Build\Win64\x64\Proto_SunwardEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"D:\Moi\Github\Proto_Sunward\Proto_Sunward\Intermediate\Build\Win64\x64\UnrealEditor\Development\Proto_Sunward\Proto_Sunward.cpp.obj"
+"D:\Moi\Github\Proto_Sunward\Proto_Sunward\Intermediate\Build\Win64\x64\UnrealEditor\Development\Proto_Sunward\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\UnrealEditor-Engine.lib"
@@ -68,7 +68,7 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"C:\Users\PUEC1602\Documents\GitHub\Proto_Sunward\Proto_Sunward\Binaries\Win64\UnrealEditor-Proto_Sunward.dll"
-/IMPLIB:"C:\Users\PUEC1602\Documents\GitHub\Proto_Sunward\Proto_Sunward\Intermediate\Build\Win64\x64\UnrealEditor\Development\Proto_Sunward\UnrealEditor-Proto_Sunward.sup.lib"
-/PDB:"C:\Users\PUEC1602\Documents\GitHub\Proto_Sunward\Proto_Sunward\Binaries\Win64\UnrealEditor-Proto_Sunward.pdb"
+/OUT:"D:\Moi\Github\Proto_Sunward\Proto_Sunward\Binaries\Win64\UnrealEditor-Proto_Sunward.dll"
+/IMPLIB:"D:\Moi\Github\Proto_Sunward\Proto_Sunward\Intermediate\Build\Win64\x64\UnrealEditor\Development\Proto_Sunward\UnrealEditor-Proto_Sunward.sup.lib"
+/PDB:"D:\Moi\Github\Proto_Sunward\Proto_Sunward\Binaries\Win64\UnrealEditor-Proto_Sunward.pdb"
 /ignore:4078

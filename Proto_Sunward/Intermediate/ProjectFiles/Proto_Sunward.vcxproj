@@ -252,6 +252,7 @@
     <None Include="..\..\Proto_Sunward.uproject"/>
     <None Include="..\..\Source\Proto_Sunward.Target.cs"/>
     <None Include="..\..\Source\Proto_SunwardEditor.Target.cs"/>
+    <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
