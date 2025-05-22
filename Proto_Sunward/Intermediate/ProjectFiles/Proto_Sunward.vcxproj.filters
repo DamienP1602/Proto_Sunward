@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Proto_Sunward.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Proto_Sunward.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\Proto_SunwardEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Proto_Sunward">
+      <UniqueIdentifier>{E9DB1348-FD76-37ED-9BA1-CC161E0F4D4B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Proto_Sunward\Proto_Sunward.Build.cs">
+      <Filter>Source\Proto_Sunward</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Proto_Sunward\Proto_Sunward.cpp">
+      <Filter>Source\Proto_Sunward</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Proto_Sunward\Proto_Sunward.h">
+      <Filter>Source\Proto_Sunward</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
