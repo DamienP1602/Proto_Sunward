@@ -9,6 +9,9 @@
 #include <Camera/CameraComponent.h>
 #include "MapPawn.generated.h"
 
+class UCameraOverlay;
+class AMarker;
+
 UCLASS()
 class PROTO_SUNWARD_API AMapPawn : public APawn
 {
@@ -30,6 +33,7 @@ class PROTO_SUNWARD_API AMapPawn : public APawn
 	UPROPERTY(VisibleAnywhere) FVector2D lastMousePos = FVector2D::ZeroVector;
 	UPROPERTY(VisibleAnywhere) bool useController = false;
 	UPROPERTY(VisibleAnywhere) bool holdRightClick = false;
+	UPROPERTY(VisibleAnywhere) bool canClick = true;
 
 
 	UPROPERTY(EditAnywhere) TObjectPtr<UInputMappingContext> mapping = nullptr;
@@ -38,11 +42,23 @@ class PROTO_SUNWARD_API AMapPawn : public APawn
 	UPROPERTY(EditAnywhere) TObjectPtr<UInputAction> lookAction = nullptr;
 	UPROPERTY(EditAnywhere) TObjectPtr<UInputAction> rightClickAction = nullptr;
 	UPROPERTY(EditAnywhere) TObjectPtr<UInputAction> zoomAction = nullptr;
+	UPROPERTY(EditAnywhere) TObjectPtr<UInputAction> interact = nullptr;
+	UPROPERTY(EditAnywhere) TObjectPtr<UInputAction> deselect = nullptr;	
+	
+	UPROPERTY(EditAnywhere) TObjectPtr<UCameraOverlay> overlay;
+	UPROPERTY(EditAnywhere) TEnumAsByte<EObjectTypeQuery> markerLayer;
+	UPROPERTY(EditAnywhere) TEnumAsByte<EObjectTypeQuery> groundLayer;
+	UPROPERTY(EditAnywhere) TMap<int, TObjectPtr<AMarker>> allMarkerCreated;
+	UPROPERTY(EditAnywhere) TArray<FLinearColor> markerColors;
+	UPROPERTY(EditAnywhere, Category = "Subclass Of") TSubclassOf<AMarker> markerSub;
 
 
 	UFUNCTION(BlueprintCallable) FORCEINLINE void SetUseController(bool _useController) { useController = _useController; }
+public:
+	FORCEINLINE void SetOverlay(UCameraOverlay* _overlay) { overlay = _overlay; }
 
 public:
+
 	// Sets default values for this pawn's properties
 	AMapPawn();
 
@@ -59,6 +75,16 @@ protected:
 	void TeleportMouse();
 	void ClampPosition();
 	void AdjustHeight();
+
+	UFUNCTION() void Interaction();
+	UFUNCTION() void Deselect();
+	UFUNCTION() void DeleteMarker(AMarker* _marker);
+	bool LaunchLineTrace(FHitResult& _result);
+	AMarker* CreateMarker(const FVector& _position);
+	bool IsAllMarkedCreated();
+	void SetMarkerPosition(AMarker* _marker);
+	int GetAmountOfMarkerCreated();
+	FVector2D GetMousePosition(APlayerController* _controller);
 
 public:	
 	// Called every frame
