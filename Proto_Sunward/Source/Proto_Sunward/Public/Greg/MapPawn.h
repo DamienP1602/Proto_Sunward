@@ -51,11 +51,12 @@ class PROTO_SUNWARD_API AMapPawn : public APawn
 	UPROPERTY(EditAnywhere) TMap<int, TObjectPtr<AMarker>> allMarkerCreated;
 	UPROPERTY(EditAnywhere) TArray<FLinearColor> markerColors;
 	UPROPERTY(EditAnywhere, Category = "Subclass Of") TSubclassOf<AMarker> markerSub;
+	UPROPERTY(EditAnywhere, Category = "Subclass Of") TSubclassOf<UCameraOverlay> overlayClass;
 
 
 	UFUNCTION(BlueprintCallable) FORCEINLINE void SetUseController(bool _useController) { useController = _useController; }
 public:
-	FORCEINLINE void SetOverlay(UCameraOverlay* _overlay) { overlay = _overlay; }
+	void SetOverlay(UCameraOverlay* _overlay);
 
 public:
 
@@ -75,6 +76,7 @@ protected:
 	void TeleportMouse();
 	void ClampPosition();
 	void AdjustHeight();
+	void Block();
 
 	UFUNCTION() void Interaction();
 	UFUNCTION() void Deselect();

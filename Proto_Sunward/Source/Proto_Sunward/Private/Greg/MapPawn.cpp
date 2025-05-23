@@ -13,6 +13,16 @@
 #include "Components/WidgetComponent.h"
 #include <Kismet/GameplayStatics.h>
 
+void AMapPawn::SetOverlay(UCameraOverlay* _overlay)
+{
+	UKismetSystemLibrary::PrintString(this, "Set Overlay");
+	if(!_overlay)
+		UKismetSystemLibrary::PrintString(this, "No ref");
+	overlay = _overlay; 
+	if(!overlay)
+		UKismetSystemLibrary::PrintString(this, "No Overlay");
+}
+
 // Sets default values
 AMapPawn::AMapPawn()
 {
@@ -29,7 +39,7 @@ AMapPawn::AMapPawn()
 void AMapPawn::BeginPlay()
 {
 	Super::BeginPlay();
-
+	overlay = CreateWidget<UCameraOverlay>(GetWorld(),overlayClass);
 
 	movement->MaxSpeed = moveSpeed;
 	movement->Acceleration = moveSpeed;
@@ -71,6 +81,8 @@ void AMapPawn::RightClickPressed()
 	float _mousePosX = 0.0f;
 	float _mousePosY = 0.0f;
 	_controller->GetMousePosition(_mousePosX, _mousePosY);
+	_controller->SetShowMouseCursor(false);
+	canClick = false;
 	lastMousePos = FVector2D(_mousePosX, _mousePosY);
 }
 
@@ -78,6 +90,8 @@ void AMapPawn::RightClickReleased()
 {
 	APlayerController* _controller = GetWorld()->GetFirstPlayerController();
 	holdRightClick = false;
+	_controller->SetShowMouseCursor(true);
+	canClick = true;
 	_controller->SetMouseLocation(lastMousePos.X, lastMousePos.Y);
 }
 
@@ -98,6 +112,7 @@ void AMapPawn::Zoom(const FInputActionValue& _value)
 
 void AMapPawn::SwitchToPlayer()
 {
+	overlay->RemoveFromParent();
 	APlayerController* _controller = GetWorld()->GetFirstPlayerController();
 	_controller->Possess(player);
 }
@@ -107,7 +122,7 @@ void AMapPawn::TeleportMouse()
 	if (holdRightClick)
 	{
 		APlayerController* _controller = GetWorld()->GetFirstPlayerController();
-		_controller->SetMouseLocation(0, 0);
+		_controller->SetMouseLocation(lastMousePos.X, lastMousePos.Y);
 	}
 }
 
@@ -132,6 +147,18 @@ void AMapPawn::AdjustHeight()
 	const FVector& _location = FVector(_result.Location.X, _result.Location.Y, _result.Location.Z + maxDistanceWithFloor);
 	SetActorLocation(_location);
 
+}
+
+void AMapPawn::Block()
+{
+	const FVector& _start = GetActorLocation();
+	const FVector& _forward = GetActorForwardVector();
+	const FVector& _end = (_forward * 10) + _start;
+	FHitResult _result;
+	if (GetWorld()->LineTraceSingleByChannel(_result, _start, _end, ECollisionChannel::ECC_Visibility))
+	{
+		SetActorLocation(lastLocation);
+	}
 }
 
 void AMapPawn::Interaction()
@@ -180,41 +207,32 @@ void AMapPawn::Interaction()
 
 void AMapPawn::Deselect()
 {
-	overlay->GetRemoveButton()->SetVisibility(ESlateVisibility::Hidden);
+	if (!overlay) return;
+	TObjectPtr<UMarkerButton> _button = overlay->GetRemoveButton();
+	if (!_button) return;
+	_button->SetVisibility(ESlateVisibility::Hidden);
 	canClick = true;
 }
 
 bool AMapPawn::LaunchLineTrace(FHitResult& _result)
 {
 	APlayerController* _controller = GetWorld()->GetFirstPlayerController();
-
 	FVector2D _mousePos = GetMousePosition(_controller);
-
 	FVector _worldPosition;
 	FVector _worldDirection;
-	UGameplayStatics::DeprojectScreenToWorld(_controller, FVector2D(_mousePos.X, _mousePos.Y), _worldPosition, _worldDirection);
-
+	_controller->DeprojectScreenPositionToWorld(_mousePos.X, _mousePos.Y, _worldPosition, _worldDirection);
 	const FVector& _endDirection = (_worldDirection * 10000.0f) + _worldPosition;
-	bool _hit = UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(),
-		_worldPosition,
-		_endDirection,
-		{ markerLayer,groundLayer },
-		true,
-		{ },
-		EDrawDebugTrace::ForDuration,
-		_result,
-		true);
-
-	return _hit;
+	const FVector& _start = GetActorLocation();
+	const FVector& _end = _start + (_worldDirection * 10000.0f);
+	DrawDebugLine(GetWorld(), _worldPosition, _end, FColor::Blue, true);
+	return GetWorld()->LineTraceSingleByChannel(_result, _worldPosition, _end, ECollisionChannel::ECC_Visibility);
 }
 
 AMarker* AMapPawn::CreateMarker(const FVector& _position)
 {
 	AMarker* _newMarker = GetWorld()->SpawnActor<AMarker>(markerSub, _position, FRotator::ZeroRotator);
 	if (!_newMarker) return nullptr;
-
 	_newMarker->OnDestroyMarker().AddDynamic(this, &AMapPawn::DeleteMarker);
-
 	return _newMarker;
 }
 
@@ -281,6 +299,7 @@ void AMapPawn::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	TeleportMouse();
 	AdjustHeight();
+	Block();
 	ClampPosition();
 	lastLocation = GetActorLocation();
 }
@@ -289,6 +308,9 @@ void AMapPawn::Tick(float DeltaTime)
 void AMapPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	overlay->AddToViewport();
+	APlayerController* _controller = GetWorld()->GetFirstPlayerController();
+	_controller->SetShowMouseCursor(true);
 	TObjectPtr<ULocalPlayer> _localPlayer = GetWorld()->GetFirstPlayerController()->GetLocalPlayer();
 	if (!_localPlayer) return;
 	TObjectPtr<UEnhancedInputLocalPlayerSubsystem> _subsystem = _localPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>();
