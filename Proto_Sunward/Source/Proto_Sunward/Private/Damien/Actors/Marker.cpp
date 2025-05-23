@@ -1,13 +1,16 @@
 #include "Damien/Actors/Marker.h"
 #include <Kismet/GameplayStatics.h>
 #include <Kismet/KismetMathLibrary.h>
+#include <Components/WidgetComponent.h>
 
 // Sets default values
 AMarker::AMarker()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	RootComponent = CreateDefaultSubobject<USceneComponent>("Root");
+	markerWidget = CreateDefaultSubobject<UWidgetComponent>("MarkerWidget");
+	markerWidget->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
@@ -33,6 +36,6 @@ void AMarker::RotateToCamera()
 	const FRotator& _rot = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(),_cameraPos);
 
 	const FRotator& _newRotation = FRotator(0.0,0.0f, _rot.Yaw);
-	SetActorRotation(_newRotation);
+	SetActorRotation(_rot);
 }
 

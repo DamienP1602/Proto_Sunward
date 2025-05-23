@@ -18,13 +18,15 @@ void UCameraOverlay::CreateMarkerButton(const FVector2D& _position, AMarker* _ma
 {
 	if (!removeButton)
 	{
-		removeButton = WidgetTree->ConstructWidget(buttonRef);
-		//Add to Viewport
+		removeButton = WidgetTree->ConstructWidget<UMarkerButton>(buttonRef);
+		removeButton->AddToViewport();
 	}
 	else
 		removeButton->SetVisibility(ESlateVisibility::Visible);
 
-	removeButton->SetFocus();
+	if (!removeButton) return;
+
+	removeButton->GetRemoveButton()->SetFocus();
 	removeButton->Init(_position, _marker);
 }
 

@@ -17,6 +17,9 @@ class PROTO_SUNWARD_API UCameraOverlay : public UUserWidget
 	UPROPERTY(EditAnywhere) TObjectPtr<UMarkerButton> removeButton;
 
 public:
+	FORCEINLINE TObjectPtr<UMarkerButton> GetRemoveButton() const { return removeButton; }
+
+public:
 	virtual void NativeConstruct() override;
 	virtual void NativeDestruct() override;
 	

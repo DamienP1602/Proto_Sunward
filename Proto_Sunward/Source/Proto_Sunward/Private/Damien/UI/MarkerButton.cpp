@@ -24,5 +24,6 @@ void UMarkerButton::Init(const FVector2D& _position, AMarker* _marker)
 
 void UMarkerButton::DestroyMark()
 {
-	marker->OnDestroyMarker().Broadcast();
+	marker->OnDestroyMarker().Broadcast(marker);
+	SetVisibility(ESlateVisibility::Hidden);
 }
