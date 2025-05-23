@@ -8,6 +8,7 @@
 				"C:/Program Files/Epic Games/UE_5.4/Engine/Plugins/Animation/ControlRigModules/Content/Modules/Meshes/SK_Biped_Template.uasset",
 				"C:/Program Files/Epic Games/UE_5.4/Engine/Plugins/Animation/ControlRig/Content/Modules/Meshes/SKM_Root_Template.uasset",
 				"C:/Program Files/Epic Games/UE_5.4/Engine/Plugins/Animation/ControlRigModules/Content/Modules/Meshes/SKM_Biped_Template.uasset",
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 				"C:/Program Files/Epic Games/UE_5.4/Engine/Content/EngineMaterials/DefaultTextMaterialOpaque.uasset",
@@ -276,6 +277,21 @@
 				"C:/Users/roms/Documents/GitHub/Proto_Sunward/Proto_Sunward/Content/Romain/Inputs_Romain/IMC_Romain.uasset",
 				"C:/Users/PUEC1602/Documents/GitHub/Proto_Sunward/Proto_Sunward/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset",
 >>>>>>> Nino
+=======
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/ThirdPersonPackage/Characters/Mannequins/Animations/Manny/Hanging2_fbm/Ch33_1001_Diffuse.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/ThirdPersonPackage/Characters/Mannequins/Animations/Manny/Hanging2_fbm/Ch33_1001_Glossiness.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/ThirdPersonPackage/Characters/Mannequins/Animations/Manny/Hanging2_fbm/Ch33_1001_Normal.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/ThirdPersonPackage/Characters/Mannequins/Animations/Manny/Hanging2_fbm/Ch33_1001_Specular.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/ThirdPersonPackage/Characters/Mannequins/Animations/Manny/Hanging2_fbm/Ch33_1002_Diffuse.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/ThirdPersonPackage/Characters/Mannequins/Animations/Manny/Hanging2_fbm/Ch33_1002_Normal.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/Greg/BP/Level/LevelTestGreg.umap",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/Damien/Blueprints/GameMode/BP_GameModeDamien.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/Greg/BP/BP_GM_Holographique.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/Greg/BP/BP_MapPawn.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/Greg/BP/BP_SplineRope.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/Greg/BP/Test.uasset",
+				"C:/Users/Gregory ZANATTA/OneDrive/Bureau/Unreal/Proto_Sunward/Proto_Sunward/Content/Greg/BP/BP_HolographiqueMapChara.uasset",
+>>>>>>> Stashed changes
 				"C:/Users/PUEC1602/Documents/GitHub/Proto_Sunward/Proto_Sunward/Content/ThirdPersonPackage/Characters/Mannequins/Meshes/SK_Mannequin.uasset",
 				"C:/Users/PUEC1602/Documents/GitHub/Proto_Sunward/Proto_Sunward/Content/ThirdPersonPackage/Characters/Mannequins/Animations/Manny/MM_Fall_Loop.uasset",
 				"C:/Users/PUEC1602/Documents/GitHub/Proto_Sunward/Proto_Sunward/Content/ThirdPersonPackage/Characters/Mannequins/Animations/Manny/MM_Idle.uasset",
